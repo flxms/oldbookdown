@@ -1,6 +1,6 @@
 #' @export
 index <- function() {
-  rmd <- dir(pattern = "\\.[rR]md$")
+  rmd <- dir(pattern = "\\.[rR]md$", recursive = TRUE, full.names = TRUE)
   headers <- lapply(rmd, extract_headers)
   names(headers) <- rmd
 
